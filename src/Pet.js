@@ -6,6 +6,7 @@ import React from "react";
 //     React.createElement("h2", {}, props.breed)
 //   ]);
 // };
+// This is a pure React way of writing a "Pet" component
 
 export default function Pet({ name, animal, breed }) {
   // return React.createElement("div", {}, [
@@ -13,6 +14,7 @@ export default function Pet({ name, animal, breed }) {
   //   React.createElement("h2", {}, animal),
   //   React.createElement("h2", {}, breed)
   // ]);
+  // This is what the JSX will be transpiled to
 
   return (
     <div>
