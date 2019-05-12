@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ANIMALS } from "@frontendmasters/pet";
+import pet, { ANIMALS } from "@frontendmasters/pet";
 import useDropdown from "./useDropdown";
 
 // ANIMALS is a list of strings. ANIMALS.map(animal => (<option></option>))
