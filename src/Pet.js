@@ -7,6 +7,7 @@ import React from "react";
 //   ]);
 // };
 // This is a pure React way of writing a "Pet" component
+import { Link } from "@reach/router";
 
 export default function Pet({ name, animal, breed, media, location, id }) {
   // return React.createElement("div", {}, [
@@ -22,7 +23,7 @@ export default function Pet({ name, animal, breed, media, location, id }) {
   }
 
   return (
-    <a href={`/details/${id}`} className="pet">
+    <Link to={`/details/${id}`} className="pet">
       <div className="image-container">
         <img src={hero} alt={name} />
       </div>
@@ -30,6 +31,6 @@ export default function Pet({ name, animal, breed, media, location, id }) {
         <h1>{name}</h1>
         <h2>{`${animal} - ${breed} - ${location}`}</h2>
       </div>
-    </a>
+    </Link>
   );
 }
