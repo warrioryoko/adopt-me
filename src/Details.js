@@ -1,6 +1,7 @@
 import React from "react";
 import pet from "@frontendmasters/pet";
 import Carousel from "./Carousel";
+import ErrorBoundary from "./ErrorBoundary";
 
 // <pre><code>{JSON.stringify(props, null, 4)}</code></pre>
 // This will show me everything Reach Router is passing in
@@ -24,6 +25,7 @@ class Details extends React.Component {
   // }
   state = { loading: true }; //New feature that allows you to skip the constructor
   componentDidMount() {
+    // throw new Error("Test");
     pet.animal(this.props.id).then(({ animal }) => {
       this.setState({
         name: animal.name,
@@ -59,4 +61,10 @@ class Details extends React.Component {
   }
 }
 
-export default Details;
+export default function DetailsWithErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      <Details {...props} /> {/*Equivalent of <Details {props.id} /> */}
+    </ErrorBoundary>
+  );
+}
